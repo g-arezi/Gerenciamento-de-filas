@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controle - Sistema de Filas Médicas</title>
+    <link rel="stylesheet" href="control-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="hospital-info">
+                <img src="assets/logo.svg" alt="Logo Hospital" class="logo">
+                <h1>Painel de Controle - Sistema de Filas</h1>
+            </div>
+            <div class="datetime">
+                <span class="time" id="current-time">16:12:53</span>
+                <span class="date" id="current-date">07/07/2025</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Status Atual -->
+            <div class="current-status-section">
+                <h2>Status Atual do Atendimento</h2>
+                <div class="status-grid">
+                    <div class="status-item">
+                        <span class="status-label">Senha Atual:</span>
+                        <span class="status-value" id="display-current-password">AP 64</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Guichê:</span>
+                        <span class="status-value" id="display-guiche">2</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Paciente:</span>
+                        <span class="status-value" id="display-patient">ADRIANA M DUARTE</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Consultório:</span>
+                        <span class="status-value" id="display-office">14 - DRA. ANA PAULA DE CAMPOS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-panels">
+                <!-- Painel de Chamadas -->
+                <div class="control-panel">
+                    <h3>Chamar Próxima Senha</h3>
+                    <div class="control-form">
+                        <div class="form-group">
+                            <label for="office-select">Consultório:</label>
+                            <select id="office-select" class="form-control">
+                                <option value="">Selecione o Consultório</option>
+                                <option value="1">Consultório 1 - Dr. João Silva</option>
+                                <option value="2">Consultório 2 - Dra. Maria Santos</option>
+                                <option value="3">Consultório 3 - Dr. Nicolas Perim</option>
+                                <option value="9">Consultório 9 - Dra. Gabriela Thais</option>
+                                <option value="10">Consultório 10 - Dra. Franconi Ferreira</option>
+                                <option value="14">Consultório 14 - Dra. Ana Paula de Campos</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="guiche-select">Guichê:</label>
+                            <select id="guiche-select" class="form-control">
+                                <option value="">Selecione o Guichê</option>
+                                <option value="1">Guichê 1</option>
+                                <option value="2">Guichê 2</option>
+                                <option value="3">Guichê 3</option>
+                                <option value="4">Guichê 4</option>
+                            </select>
+                        </div>
+                        <button id="call-next" class="btn-primary btn-large">
+                            📢 Chamar Próxima Senha
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Painel de Geração de Senhas -->
+                <div class="control-panel">
+                    <h3>Gerar Nova Senha</h3>
+                    <div class="control-form">
+                        <div class="form-group">
+                            <label for="password-type">Tipo de Atendimento:</label>
+                            <select id="password-type" class="form-control">
+                                <option value="AP">Atendimento Prioritário (AP)</option>
+                                <option value="CM">Consulta Médica (CM)</option>
+                                <option value="EX">Exames (EX)</option>
+                                <option value="RE">Retorno (RE)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="patient-name-input">Nome do Paciente:</label>
+                            <input type="text" id="patient-name-input" class="form-control" placeholder="Digite o nome completo do paciente" maxlength="50">
+                        </div>
+                        <button id="generate-password" class="btn-secondary btn-large">
+                            🎫 Gerar Nova Senha
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fila de Espera -->
+            <div class="queue-section">
+                <div class="queue-header">
+                    <h3>Fila de Espera</h3>
+                    <div class="queue-stats">
+                        <span class="queue-count" id="queue-count">4 pessoas na fila</span>
+                        <button id="refresh-queue" class="btn-refresh">🔄 Atualizar</button>
+                    </div>
+                </div>
+                <div class="queue-container">
+                    <div class="queue-list" id="queue-list">
+                        <!-- Lista de senhas será preenchida dinamicamente -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Estatísticas Rápidas -->
+            <div class="stats-section">
+                <h3>Estatísticas do Dia</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat-total">89</div>
+                        <div class="stat-label">Total Atendido</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat-waiting">4</div>
+                        <div class="stat-label">Na Fila</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat-priority">12</div>
+                        <div class="stat-label">Prioritários</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat-average">8m</div>
+                        <div class="stat-label">Tempo Médio</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Link para tela de exibição -->
+        <div class="display-link">
+            <a href="display.html" target="_blank" class="display-btn">
+                📺 Abrir Tela de Exibição
+            </a>
+        </div>
+    </div>
+
+    <script src="control-script.js"></script>
+</body>
+</html>

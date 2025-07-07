@@ -1,0 +1,548 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: white;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Header */
+.header {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hospital-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.hospital-info h1 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.datetime {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.time {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.date {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 30px;
+}
+
+.left-panel, .right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.section-title.senha {
+    background: #4CAF50;
+}
+
+.section-title.guiche {
+    background: #2196F3;
+}
+
+.section-title.recent {
+    background: #FF9800;
+}
+
+.section-title.next {
+    background: #9C27B0;
+}
+
+.section-title.patient {
+    background: #8BC34A;
+}
+
+.section-title.office {
+    background: #00BCD4;
+}
+
+/* Current Password Section */
+.current-password-section {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.current-password {
+    font-size: 48px;
+    font-weight: 700;
+    margin-top: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Guichê Section */
+.guiche-section {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.guiche-number {
+    font-size: 72px;
+    font-weight: 700;
+    margin-top: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Recent Calls Section */
+.recent-calls-section {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    flex: 1;
+}
+
+.recent-calls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.call-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px 15px;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 1fr 2fr auto;
+    gap: 10px;
+    align-items: center;
+    font-size: 13px;
+}
+
+.call-name {
+    font-weight: 600;
+}
+
+.call-code {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.call-time {
+    font-weight: 500;
+    color: #FFD700;
+}
+
+/* Next Calls Section */
+.next-calls-section {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.next-calls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.next-call-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px 15px;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 10px;
+    align-items: center;
+    font-size: 13px;
+}
+
+.next-code {
+    font-weight: 600;
+}
+
+.next-guiche {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.next-time {
+    font-weight: 500;
+    color: #FFD700;
+}
+
+/* Patient Section */
+.patient-section {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.patient-name {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Office Section */
+.office-section {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.office-info {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Admin Panel */
+.admin-panel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(15px);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.admin-panel.active {
+    right: 0;
+}
+
+.admin-header {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.admin-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.toggle-admin {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+.toggle-admin:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.admin-content {
+    padding: 20px;
+}
+
+.admin-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-section:last-child {
+    border-bottom: none;
+}
+
+.admin-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #FFD700;
+}
+
+.admin-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.admin-controls select,
+.admin-controls input {
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 14px;
+}
+
+.admin-controls select option {
+    background: #333;
+    color: white;
+}
+
+.admin-controls input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary {
+    background: #4CAF50;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #45a049;
+}
+
+.btn-secondary {
+    background: #2196F3;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #1976D2;
+}
+
+.admin-toggle-btn {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 999;
+}
+
+.admin-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Queue List */
+.queue-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.queue-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+
+.queue-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.queue-item-password {
+    font-weight: 600;
+    color: #FFD700;
+}
+
+.queue-item-name {
+    opacity: 0.9;
+}
+
+.queue-item-time {
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .main-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .admin-panel {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .current-password {
+        font-size: 36px;
+    }
+    
+    .guiche-number {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 15px;
+    }
+    
+    .hospital-info h1 {
+        font-size: 18px;
+    }
+    
+    .main-content {
+        padding: 15px;
+    }
+    
+    .current-password {
+        font-size: 32px;
+    }
+    
+    .guiche-number {
+        font-size: 42px;
+    }
+    
+    .patient-name {
+        font-size: 20px;
+    }
+    
+    .office-info {
+        font-size: 16px;
+    }
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.current-password {
+    animation: pulse 2s infinite;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.call-item,
+.next-call-item {
+    animation: slideIn 0.3s ease;
+}
+
+/* Scrollbar Styling */
+.recent-calls::-webkit-scrollbar,
+.next-calls::-webkit-scrollbar,
+.queue-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.recent-calls::-webkit-scrollbar-track,
+.next-calls::-webkit-scrollbar-track,
+.queue-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.recent-calls::-webkit-scrollbar-thumb,
+.next-calls::-webkit-scrollbar-thumb,
+.queue-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.recent-calls::-webkit-scrollbar-thumb:hover,
+.next-calls::-webkit-scrollbar-thumb:hover,
+.queue-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}

@@ -1,0 +1,434 @@
+/* Estilos para Tela de Exibição */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    color: #e0e0e0;
+    overflow: hidden; /* Tela cheia, sem scroll */
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Header */
+.header {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(15px);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hospital-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    padding: 0;
+}
+
+.hospital-info h1 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.datetime {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.time {
+    font-size: 20px;
+    font-weight: 700;
+    color: #00d4ff;
+}
+
+.date {
+    font-size: 16px;
+    opacity: 0.8;
+    color: #a0a0a0;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 30px;
+}
+
+.left-panel, .right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.section-title.senha {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+}
+
+.section-title.guiche {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.section-title.recent {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+
+.section-title.next {
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+}
+
+.section-title.patient {
+    background: linear-gradient(135deg, #1abc9c, #16a085);
+}
+
+.section-title.office {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+/* Current Password Section */
+.current-password-section {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.current-password {
+    font-size: 60px;
+    font-weight: 700;
+    margin-top: 15px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    animation: pulse 2s infinite;
+    color: #00ff88;
+}
+
+/* Guichê Section */
+.guiche-section {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.guiche-number {
+    font-size: 90px;
+    font-weight: 700;
+    margin-top: 15px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    color: #00d4ff;
+}
+
+/* Recent Calls Section */
+.recent-calls-section {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    flex: 1;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.recent-calls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.call-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px 18px;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 1fr 2fr auto;
+    gap: 15px;
+    align-items: center;
+    font-size: 14px;
+    animation: slideIn 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.call-name {
+    font-weight: 600;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.call-code {
+    font-size: 13px;
+    opacity: 0.8;
+    color: #b0b0b0;
+}
+
+.call-time {
+    font-weight: 600;
+    color: #ffd700;
+    font-size: 14px;
+}
+
+/* Next Calls Section */
+.next-calls-section {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.next-calls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.next-call-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px 18px;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 15px;
+    align-items: center;
+    font-size: 14px;
+    animation: slideIn 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.next-code {
+    font-weight: 600;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.next-guiche {
+    font-size: 13px;
+    opacity: 0.8;
+    color: #b0b0b0;
+}
+
+.next-time {
+    font-weight: 600;
+    color: #ffd700;
+    font-size: 14px;
+}
+
+/* Patient Section */
+.patient-section {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.patient-name {
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 15px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    color: #00ff88;
+}
+
+/* Office Section */
+.office-section {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.office-info {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 15px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    color: #ff6b6b;
+}
+
+/* Control Link */
+.control-link {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.control-btn {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(15px);
+    color: #e0e0e0;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.control-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    color: #00d4ff;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Scrollbar Styling */
+.recent-calls::-webkit-scrollbar,
+.next-calls::-webkit-scrollbar {
+    width: 8px;
+}
+
+.recent-calls::-webkit-scrollbar-track,
+.next-calls::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.recent-calls::-webkit-scrollbar-thumb,
+.next-calls::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.recent-calls::-webkit-scrollbar-thumb:hover,
+.next-calls::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .current-password {
+        font-size: 48px;
+    }
+    
+    .guiche-number {
+        font-size: 72px;
+    }
+    
+    .patient-name {
+        font-size: 24px;
+    }
+    
+    .office-info {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .main-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .current-password {
+        font-size: 42px;
+    }
+    
+    .guiche-number {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 15px;
+    }
+    
+    .hospital-info h1 {
+        font-size: 18px;
+    }
+    
+    .main-content {
+        padding: 15px;
+    }
+    
+    .current-password {
+        font-size: 36px;
+    }
+    
+    .guiche-number {
+        font-size: 48px;
+    }
+    
+    .patient-name {
+        font-size: 20px;
+    }
+    
+    .office-info {
+        font-size: 16px;
+    }
+    
+    .control-btn {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+}

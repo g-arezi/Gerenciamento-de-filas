@@ -1,4 +1,4 @@
-/* Estilos para Tela de Exibição */
+/* Estilos para Tela de Exibição - Versão Ultra Moderna */
 * {
     margin: 0;
     padding: 0;
@@ -7,326 +7,395 @@
 
 body {
     font-family: 'Roboto', Arial, sans-serif;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background: linear-gradient(120deg, #0a0e1a 0%, #1a1d29 30%, #232946 60%, #0f3460 100%);
     min-height: 100vh;
     color: #e0e0e0;
-    overflow: hidden; /* Tela cheia, sem scroll */
+    overflow: hidden;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
 }
 
-.container {
+/* Partículas de fundo animadas */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(0, 255, 136, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 107, 107, 0.02) 0%, transparent 50%);
+    animation: particle-float 20s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes particle-float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(1deg); }
+    66% { transform: translateY(5px) rotate(-1deg); }
+}
+
+/* Container principal com efeito glass e sombra mais intensa */
+.container {
+    width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     position: relative;
+    background: rgba(15, 19, 32, 0.6);
+    box-shadow: 0 8px 40px 0 rgba(0,0,0,0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Header */
+/* Header com glassmorphism mais evidente e gradiente animado */
 .header {
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(15px);
-    padding: 15px 30px;
+    background: linear-gradient(135deg, rgba(20,25,40,0.92) 0%, rgba(30,34,54,0.88) 60%, rgba(0,212,255,0.08) 100%);
+    backdrop-filter: blur(24px);
+    padding: 28px 56px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid rgba(0,212,255,0.12);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.05) inset;
+    border-radius: 0 0 40px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0,212,255,0.5), transparent);
+    animation: scan-line 3s linear infinite;
+}
+
+@keyframes scan-line {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
 }
 
 .hospital-info {
     display: flex;
     align-items: center;
-    gap: 15px;
-}
-
-.logo {
-    width: 50px;
-    height: 50px;
-    border-radius: 8px;
-    padding: 0;
+    gap: 18px;
 }
 
 .hospital-info h1 {
-    font-size: 24px;
-    font-weight: 500;
-    color: #ffffff;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 20px #00d4ff66, 0 1px 0 #000;
+    margin-left: 8px;
+    background: linear-gradient(135deg, #fff 0%, #00d4ff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: text-glow 4s ease-in-out infinite;
 }
 
+@keyframes text-glow {
+    0%, 100% { filter: drop-shadow(0 0 8px #00d4ff44); }
+    50% { filter: drop-shadow(0 0 16px #00d4ff88); }
+}
+
+/* Logo com efeito glass e sombra */
+.logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px #00d4ff44, 0 1px 0 rgba(255,255,255,0.1) inset;
+    background: rgba(255,255,255,0.06);
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 24px #00d4ff66;
+}
+
+/* Data/hora com fonte digital e destaque */
 .datetime {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 5px;
+    gap: 6px;
+    font-family: 'Roboto Mono', 'Roboto', Arial, sans-serif;
+    text-align: right;
+    padding: 12px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 212, 255, 0.2);
 }
 
+/* Relógio com efeito neon */
 .time {
-    font-size: 20px;
+    font-size: 1.8rem;
     font-weight: 700;
     color: #00d4ff;
+    text-shadow: 0 0 12px #00d4ff99, 0 1px 0 #000;
+    letter-spacing: 0.1em;
+    animation: time-pulse 2s ease-in-out infinite;
 }
 
+@keyframes time-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+/* Data com opacidade e fonte menor */
 .date {
-    font-size: 16px;
+    font-size: 1.1rem;
     opacity: 0.8;
     color: #a0a0a0;
+    font-weight: 500;
 }
 
-/* Main Content */
+/* Main content com espaçamento maior e cards centralizados */
 .main-content {
     flex: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    padding: 48px 64px 32px 64px;
+    justify-content: center;
+    align-items: stretch;
 }
 
+/* Painéis com espaçamento maior */
 .left-panel, .right-panel {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 32px;
+    justify-content: center;
 }
 
-/* Section Titles */
-.section-title {
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-    padding: 12px 20px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.section-title.senha {
-    background: linear-gradient(135deg, #27ae60, #2ecc71);
-}
-
-.section-title.guiche {
-    background: linear-gradient(135deg, #3498db, #2980b9);
-}
-
-.section-title.recent {
-    background: linear-gradient(135deg, #f39c12, #e67e22);
-}
-
-.section-title.next {
-    background: linear-gradient(135deg, #9b59b6, #8e44ad);
-}
-
-.section-title.patient {
-    background: linear-gradient(135deg, #1abc9c, #16a085);
-}
-
-.section-title.office {
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
-}
-
-/* Current Password Section */
+/* Card principal com glassmorphism, borda gradiente e glow */
 .current-password-section {
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(15px);
-    border-radius: 20px;
-    padding: 30px;
+    background: rgba(15, 20, 32, 0.8);
+    backdrop-filter: blur(32px);
+    border-radius: 32px;
+    padding: 48px 40px 40px 40px;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(0, 255, 136, 0.3);
+    box-shadow: 
+        0 16px 64px 0 rgba(0, 255, 136, 0.15),
+        0 4px 20px 0 rgba(0, 0, 0, 0.3),
+        0 1px 0 rgba(255, 255, 255, 0.05) inset;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    animation: card-float 6s ease-in-out infinite;
 }
 
+@keyframes card-float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-4px); }
+}
+
+.current-password-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 32px;
+    pointer-events: none;
+    box-shadow: 0 0 80px 12px rgba(0, 255, 136, 0.08) inset;
+    opacity: 0.6;
+}
+
+.current-password-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 136, 0.05) 50%, transparent 70%);
+    animation: shimmer 3s linear infinite;
+    border-radius: 32px;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Senha atual com efeito glow ultra melhorado */
 .current-password {
-    font-size: 60px;
-    font-weight: 700;
-    margin-top: 15px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-    animation: pulse 2s infinite;
+    font-size: 5rem;
+    font-weight: 900;
+    margin-top: 24px;
+    text-shadow: 
+        0 0 30px rgba(0, 255, 136, 0.8),
+        0 0 60px rgba(0, 255, 136, 0.4),
+        0 4px 12px rgba(0, 0, 0, 0.6);
+    animation: pulse-glow 3s ease-in-out infinite;
     color: #00ff88;
-}
-
-/* Guichê Section */
-.guiche-section {
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(15px);
-    border-radius: 20px;
-    padding: 30px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-}
-
-.guiche-number {
-    font-size: 90px;
-    font-weight: 700;
-    margin-top: 15px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-    color: #00d4ff;
-}
-
-/* Recent Calls Section */
-.recent-calls-section {
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(15px);
-    border-radius: 20px;
-    padding: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    flex: 1;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-}
-
-.recent-calls {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-height: 400px;
-    overflow-y: auto;
-}
-
-.call-item {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 15px 18px;
-    border-radius: 12px;
-    display: grid;
-    grid-template-columns: 1fr 2fr auto;
-    gap: 15px;
-    align-items: center;
-    font-size: 14px;
-    animation: slideIn 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.call-name {
-    font-weight: 600;
-    font-size: 15px;
-    color: #ffffff;
-}
-
-.call-code {
-    font-size: 13px;
-    opacity: 0.8;
-    color: #b0b0b0;
-}
-
-.call-time {
-    font-weight: 600;
-    color: #ffd700;
-    font-size: 14px;
-}
-
-/* Next Calls Section */
-.next-calls-section {
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(15px);
-    border-radius: 20px;
-    padding: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-}
-
-.next-calls {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-.next-call-item {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 15px 18px;
-    border-radius: 12px;
-    display: grid;
-    grid-template-columns: 1fr 1fr auto;
-    gap: 15px;
-    align-items: center;
-    font-size: 14px;
-    animation: slideIn 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.next-code {
-    font-weight: 600;
-    font-size: 15px;
-    color: #ffffff;
-}
-
-.next-guiche {
-    font-size: 13px;
-    opacity: 0.8;
-    color: #b0b0b0;
-}
-
-.next-time {
-    font-weight: 600;
-    color: #ffd700;
-    font-size: 14px;
-}
-
-/* Patient Section */
-.patient-section {
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(15px);
-    border-radius: 20px;
-    padding: 30px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-}
-
-.patient-name {
-    font-size: 28px;
-    font-weight: 600;
-    margin-top: 15px;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-    color: #00ff88;
-}
-
-/* Office Section */
-.office-section {
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(15px);
-    border-radius: 20px;
-    padding: 30px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-}
-
-.office-info {
-    font-size: 20px;
-    font-weight: 600;
-    margin-top: 15px;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-    color: #ff6b6b;
-}
-
-/* Control Link */
-.control-link {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.control-btn {
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(15px);
-    color: #e0e0e0;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 600;
+    letter-spacing: 0.1em;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
-    gap: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
 }
 
-.control-btn:hover {
-    background: rgba(0, 0, 0, 0.8);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+@keyframes pulse-glow {
+    0%, 100% { 
+        transform: scale(1);
+        filter: brightness(1);
+    }
+    50% { 
+        transform: scale(1.02);
+        filter: brightness(1.1);
+    }
+}
+
+.current-password svg {
+    width: 44px;
+    height: 44px;
+    filter: drop-shadow(0 0 12px rgba(0, 255, 136, 0.8));
+    animation: icon-spin 8s linear infinite;
+}
+
+@keyframes icon-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Card guichê ultra melhorado */
+.guiche-section {
+    background: rgba(15, 20, 32, 0.8);
+    backdrop-filter: blur(24px);
+    border-radius: 28px;
+    padding: 40px 32px 32px 32px;
+    text-align: center;
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    box-shadow: 
+        0 12px 48px 0 rgba(0, 212, 255, 0.15),
+        0 4px 20px 0 rgba(0, 0, 0, 0.3),
+        0 1px 0 rgba(255, 255, 255, 0.05) inset;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    animation: card-float 6s ease-in-out infinite 1s;
+}
+
+.guiche-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 28px;
+    pointer-events: none;
+    box-shadow: 0 0 64px 10px rgba(0, 212, 255, 0.08) inset;
+    opacity: 0.5;
+}
+
+/* Número do guichê melhorado */
+.guiche-number {
+    font-size: 4.2rem;
+    font-weight: 900;
+    margin-top: 20px;
+    text-shadow: 
+        0 0 24px rgba(0, 212, 255, 0.8),
+        0 0 48px rgba(0, 212, 255, 0.4),
+        0 4px 12px rgba(0, 0, 0, 0.6);
     color: #00d4ff;
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    animation: number-glow 4s ease-in-out infinite;
+}
+
+@keyframes number-glow {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.2); }
+}
+
+.guiche-number svg {
+    width: 36px;
+    height: 36px;
+    filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.8));
+}
+
+/* Section Titles modernos com gradientes e ícones */
+.section-title {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 16px;
+    padding: 16px 24px;
+    border-radius: 12px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.section-title:hover::before {
+    left: 100%;
+}
+
+.section-title.senha {
+    background: linear-gradient(135deg, rgba(39, 174, 96, 0.9) 0%, rgba(46, 204, 113, 0.9) 100%);
+    box-shadow: 0 4px 16px rgba(39, 174, 96, 0.3);
+}
+
+.section-title.guiche {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.9) 0%, rgba(41, 128, 185, 0.9) 100%);
+    box-shadow: 0 4px 16px rgba(52, 152, 219, 0.3);
+}
+
+.section-title.recent {
+    background: linear-gradient(135deg, rgba(243, 156, 18, 0.9) 0%, rgba(230, 126, 34, 0.9) 100%);
+    box-shadow: 0 4px 16px rgba(243, 156, 18, 0.3);
+}
+
+.section-title.next {
+    background: linear-gradient(135deg, rgba(155, 89, 182, 0.9) 0%, rgba(142, 68, 173, 0.9) 100%);
+    box-shadow: 0 4px 16px rgba(155, 89, 182, 0.3);
+}
+
+.section-title.patient {
+    background: linear-gradient(135deg, rgba(26, 188, 156, 0.9) 0%, rgba(22, 160, 133, 0.9) 100%);
+    box-shadow: 0 4px 16px rgba(26, 188, 156, 0.3);
+}
+
+.section-title.office {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.9) 0%, rgba(192, 57, 43, 0.9) 100%);
+    box-shadow: 0 4px 16px rgba(231, 76, 60, 0.3);
 }
 
 /* Animations */
@@ -337,98 +406,345 @@ body {
 }
 
 @keyframes slideIn {
-    from { transform: translateX(-100%); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
+    from { 
+        transform: translateX(-100%) scale(0.9);
+        opacity: 0;
+    }
+    to { 
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
 }
 
 /* Scrollbar Styling */
 .recent-calls::-webkit-scrollbar,
 .next-calls::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
 }
 
 .recent-calls::-webkit-scrollbar-track,
 .next-calls::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
 
 .recent-calls::-webkit-scrollbar-thumb,
 .next-calls::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 4px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%);
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
 }
 
 .recent-calls::-webkit-scrollbar-thumb:hover,
 .next-calls::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.5);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.3) 100%);
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
+/* Responsividade ultra melhorada para todos os dispositivos */
+@media (max-width: 1400px) {
+    .main-content {
+        gap: 32px;
+        padding: 40px 48px 24px 48px;
+    }
+    
     .current-password {
-        font-size: 48px;
+        font-size: 4.2rem;
     }
     
     .guiche-number {
-        font-size: 72px;
+        font-size: 3.6rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .main-content {
+        gap: 28px;
+        padding: 32px 24px 20px 24px;
     }
     
-    .patient-name {
-        font-size: 24px;
+    .current-password {
+        font-size: 3.8rem;
     }
     
-    .office-info {
-        font-size: 18px;
+    .guiche-number {
+        font-size: 3.2rem;
+    }
+    
+    .hospital-info h1 {
+        font-size: 2rem;
+    }
+    
+    .header {
+        padding: 24px 32px;
     }
 }
 
 @media (max-width: 1024px) {
     .main-content {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        gap: 24px;
+        padding: 20px 16px 16px 16px;
+    }
+    
+    .left-panel, .right-panel {
         gap: 20px;
     }
     
     .current-password {
-        font-size: 42px;
+        font-size: 3.4rem;
     }
     
     .guiche-number {
-        font-size: 60px;
+        font-size: 2.8rem;
+    }
+    
+    .patient-name {
+        font-size: 1.8rem;
+    }
+    
+    .office-info {
+        font-size: 1.4rem;
     }
 }
 
 @media (max-width: 768px) {
     .header {
-        padding: 10px 15px;
+        padding: 16px 20px;
+        border-radius: 0 0 24px 24px;
     }
     
     .hospital-info h1 {
-        font-size: 18px;
+        font-size: 1.6rem;
+    }
+    
+    .logo {
+        width: 48px;
+        height: 48px;
     }
     
     .main-content {
-        padding: 15px;
+        padding: 16px 12px 12px 12px;
+        gap: 16px;
     }
     
     .current-password {
-        font-size: 36px;
+        font-size: 2.8rem;
     }
     
     .guiche-number {
-        font-size: 48px;
+        font-size: 2.4rem;
     }
     
     .patient-name {
-        font-size: 20px;
+        font-size: 1.5rem;
     }
     
     .office-info {
-        font-size: 16px;
+        font-size: 1.2rem;
+    }
+    
+    .call-item, .next-call-item {
+        padding: 14px 16px;
+        font-size: 13px;
+        gap: 12px;
+    }
+    
+    .control-btn {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+    
+    .control-link {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .header {
+        padding: 12px 16px;
+    }
+    
+    .hospital-info h1 {
+        font-size: 1.3rem;
+    }
+    
+    .datetime {
+        padding: 8px 12px;
+    }
+    
+    .time {
+        font-size: 1.4rem;
+    }
+    
+    .date {
+        font-size: 0.9rem;
+    }
+    
+    .current-password {
+        font-size: 2.4rem;
+    }
+    
+    .guiche-number {
+        font-size: 2rem;
+    }
+    
+    .patient-name {
+        font-size: 1.3rem;
+    }
+    
+    .office-info {
+        font-size: 1.1rem;
+    }
+    
+    .call-item, .next-call-item {
+        padding: 12px 14px;
+        font-size: 12px;
+        gap: 10px;
+        grid-template-columns: 1fr 1.5fr auto;
+    }
+    
+    .section-title {
+        font-size: 0.9rem;
+        padding: 12px 16px;
+    }
+    
+    .current-password-section,
+    .guiche-section,
+    .patient-section,
+    .office-section {
+        padding: 24px 20px 20px 20px;
+    }
+    
+    .recent-calls-section,
+    .next-calls-section {
+        padding: 20px 16px 16px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 12px 8px 8px 8px;
+    }
+    
+    .current-password {
+        font-size: 2rem;
+        gap: 12px;
+    }
+    
+    .guiche-number {
+        font-size: 1.8rem;
+        gap: 8px;
+    }
+    
+    .patient-name {
+        font-size: 1.1rem;
+    }
+    
+    .office-info {
+        font-size: 1rem;
+    }
+    
+    .call-item, .next-call-item {
+        padding: 10px 12px;
+        font-size: 11px;
+        gap: 8px;
+        grid-template-columns: 1fr 1fr auto;
+    }
+    
+    .current-password svg {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .guiche-number svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .section-title svg {
+        width: 16px;
+        height: 16px;
     }
     
     .control-btn {
         padding: 10px 16px;
         font-size: 12px;
+        gap: 8px;
+    }
+}
+
+/* Animações especiais para dispositivos com motion */
+@media (prefers-reduced-motion: no-preference) {
+    .current-password-section,
+    .guiche-section,
+    .patient-section,
+    .office-section,
+    .recent-calls-section,
+    .next-calls-section {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .current-password-section:hover,
+    .guiche-section:hover,
+    .patient-section:hover,
+    .office-section:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 20px 80px rgba(0, 255, 136, 0.2);
+    }
+    
+    .guiche-section:hover {
+        box-shadow: 0 20px 80px rgba(0, 212, 255, 0.2);
+    }
+    
+    .patient-section:hover {
+        box-shadow: 0 20px 80px rgba(26, 188, 156, 0.2);
+    }
+    
+    .office-section:hover {
+        box-shadow: 0 20px 80px rgba(231, 76, 60, 0.2);
+    }
+}
+
+/* Modo de alto contraste */
+@media (prefers-contrast: high) {
+    .current-password-section {
+        border-color: #00ff88;
+        background: rgba(0, 0, 0, 0.9);
+    }
+    
+    .guiche-section {
+        border-color: #00d4ff;
+        background: rgba(0, 0, 0, 0.9);
+    }
+    
+    .patient-section {
+        border-color: #1abc9c;
+        background: rgba(0, 0, 0, 0.9);
+    }
+    
+    .office-section {
+        border-color: #e74c3c;
+        background: rgba(0, 0, 0, 0.9);
+    }
+    
+    .call-item, .next-call-item {
+        background: rgba(0, 0, 0, 0.8);
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* Suporte a temas escuros do sistema */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(120deg, #050812 0%, #0a0e1a 30%, #1a1d29 60%, #232946 100%);
+    }
+    
+    .container {
+        background: rgba(5, 8, 18, 0.8);
+    }
+    
+    .header {
+        background: linear-gradient(135deg, rgba(10, 14, 26, 0.95) 0%, rgba(20, 25, 40, 0.92) 60%, rgba(0,212,255,0.08) 100%);
     }
 }

@@ -25,23 +25,15 @@ class DisplayManager {
         
         // Dados padrão se não houver dados salvos
         return {
-            currentPassword: 'AP 64',
-            currentGuiche: '2',
-            currentPatient: 'ADRIANA M DUARTE',
-            currentOffice: '14 - DRA. ANA PAULA DE CAMPOS',
+            currentPassword: '-- --',
+            currentGuiche: '--',
+            currentPatient: 'AGUARDANDO PRÓXIMO PACIENTE',
+            currentOffice: '-- SELECIONE UM CONSULTÓRIO --',
             recentCalls: [
-                { name: 'LUCIANA R.', code: 'CONS. 14 - DRA. ANA PAULA DE CAMPOS', time: '16:10' },
-                { name: 'MARIA T.', code: 'CONS. 14 - DRA. ANA PAULA DE CAMPOS', time: '16:09' },
-                { name: 'FRANCISCA F.', code: 'CONS. 10 - DRA. FRANCONI FERREIRA MACHADO', time: '16:08' },
-                { name: 'RENATA M.', code: 'CONS. 9 - DRA. GABRIELA THAIS A SILVA', time: '16:07' },
-                { name: 'CESAR S.', code: 'CONS. 3 - DR. NICOLAS PERIM', time: '16:06' }
+                { name: 'SISTEMA', code: 'AGUARDANDO PRIMEIRAS CHAMADAS', time: '--:--' }
             ],
             nextCalls: [
-                { code: 'AP 61', guiche: 'GUICHÊ 2', time: '16:11' },
-                { code: 'CM 159', guiche: 'GUICHÊ 3', time: '16:10' },
-                { code: 'CM 158', guiche: 'GUICHÊ 3', time: '16:09' },
-                { code: 'AP 63', guiche: 'GUICHÊ 4', time: '16:08' },
-                { code: 'AP 62', guiche: 'GUICHÊ 2', time: '16:07' }
+                { code: '-- --', guiche: 'GUICHÊ --', time: '--:--' }
             ],
             lastUpdate: new Date().getTime()
         };

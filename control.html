@@ -44,59 +44,224 @@
                 </div>
             </div>
 
-            <div class="control-panels">
-                <!-- Painel de Chamadas -->
-                <div class="control-panel">
-                    <h3>Chamar Próxima Senha</h3>
-                    <div class="control-form">
-                        <div class="form-group">
-                            <label for="office-select">Consultório:</label>
-                            <select id="office-select" class="form-control">
-                                <option value="">Selecione o Consultório</option>
-                                <option value="1">Consultório 1 - Dr. João Silva</option>
-                                <option value="2">Consultório 2 - Dra. Maria Santos</option>
-                                <option value="3">Consultório 3 - Dr. Nicolas Perim</option>
-                                <option value="9">Consultório 9 - Dra. Gabriela Thais</option>
-                                <option value="10">Consultório 10 - Dra. Franconi Ferreira</option>
-                                <option value="14">Consultório 14 - Dra. Ana Paula de Campos</option>
-                            </select>
+            <!-- Seção de Configurações -->
+            <div class="config-section">
+                <h2>Configurações do Sistema</h2>
+                <div class="config-tabs">
+                    <button class="tab-btn active" data-tab="config-main">📋 Principal</button>
+                    <button class="tab-btn" data-tab="config-guiches">🏢 Guichês</button>
+                    <button class="tab-btn" data-tab="config-consultorios">🏥 Consultórios</button>
+                    <button class="tab-btn" data-tab="config-tipos">📋 Tipos de Atendimento</button>
+                    <button class="tab-btn" data-tab="config-profissionais">👨‍⚕️ Profissionais</button>
+                </div>
+
+                <!-- Conteúdo Principal -->
+                <div id="config-main" class="tab-content active">
+                    <div class="control-panels">
+                        <!-- Painel de Chamadas -->
+                        <div class="control-panel">
+                            <h3>Chamar Próxima Senha</h3>
+                            <div class="control-form">
+                                <div class="form-group">
+                                    <label for="office-select">Consultório:</label>
+                                    <select id="office-select" class="form-control">
+                                        <option value="">Selecione o Consultório</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="guiche-select">Guichê:</label>
+                                    <select id="guiche-select" class="form-control">
+                                        <option value="">Selecione o Guichê</option>
+                                    </select>
+                                </div>
+                                <button id="call-next" class="btn-primary btn-large">
+                                    📢 Chamar Próxima Senha
+                                </button>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="guiche-select">Guichê:</label>
-                            <select id="guiche-select" class="form-control">
-                                <option value="">Selecione o Guichê</option>
-                                <option value="1">Guichê 1</option>
-                                <option value="2">Guichê 2</option>
-                                <option value="3">Guichê 3</option>
-                                <option value="4">Guichê 4</option>
-                            </select>
+
+                        <!-- Painel de Geração de Senhas -->
+                        <div class="control-panel">
+                            <h3>Gerar Nova Senha</h3>
+                            <div class="control-form">
+                                <div class="form-group">
+                                    <label for="password-type">Tipo de Atendimento:</label>
+                                    <select id="password-type" class="form-control">
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="patient-name-input">Nome do Paciente:</label>
+                                    <input type="text" id="patient-name-input" class="form-control" placeholder="Digite o nome completo do paciente" maxlength="50">
+                                </div>
+                                <button id="generate-password" class="btn-secondary btn-large">
+                                    🎫 Gerar Nova Senha
+                                </button>
+                            </div>
                         </div>
-                        <button id="call-next" class="btn-primary btn-large">
-                            📢 Chamar Próxima Senha
-                        </button>
                     </div>
                 </div>
 
-                <!-- Painel de Geração de Senhas -->
-                <div class="control-panel">
-                    <h3>Gerar Nova Senha</h3>
-                    <div class="control-form">
-                        <div class="form-group">
-                            <label for="password-type">Tipo de Atendimento:</label>
-                            <select id="password-type" class="form-control">
-                                <option value="AP">Atendimento Prioritário (AP)</option>
-                                <option value="CM">Consulta Médica (CM)</option>
-                                <option value="EX">Exames (EX)</option>
-                                <option value="RE">Retorno (RE)</option>
-                            </select>
+                <!-- Configuração de Guichês -->
+                <div id="config-guiches" class="tab-content">
+                    <div class="config-panel">
+                        <div class="config-form">
+                            <h3>Gerenciar Guichês</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="guiche-numero">Número do Guichê:</label>
+                                    <input type="number" id="guiche-numero" class="form-control" min="1" max="99" placeholder="Ex: 1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="guiche-descricao">Descrição (opcional):</label>
+                                    <input type="text" id="guiche-descricao" class="form-control" placeholder="Ex: Atendimento Geral" maxlength="50">
+                                </div>
+                                <div class="form-group">
+                                    <label for="guiche-status">Status:</label>
+                                    <select id="guiche-status" class="form-control">
+                                        <option value="ativo">Ativo</option>
+                                        <option value="inativo">Inativo</option>
+                                        <option value="manutencao">Manutenção</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button id="add-guiche" class="btn-success">➕ Adicionar Guichê</button>
                         </div>
-                        <div class="form-group">
-                            <label for="patient-name-input">Nome do Paciente:</label>
-                            <input type="text" id="patient-name-input" class="form-control" placeholder="Digite o nome completo do paciente" maxlength="50">
+                        <div class="config-list">
+                            <h4>Guichês Cadastrados</h4>
+                            <div id="guiches-list" class="items-list">
+                                <!-- Lista será preenchida dinamicamente -->
+                            </div>
                         </div>
-                        <button id="generate-password" class="btn-secondary btn-large">
-                            🎫 Gerar Nova Senha
-                        </button>
+                    </div>
+                </div>
+
+                <!-- Configuração de Consultórios -->
+                <div id="config-consultorios" class="tab-content">
+                    <div class="config-panel">
+                        <div class="config-form">
+                            <h3>Gerenciar Consultórios</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="consultorio-numero">Número do Consultório:</label>
+                                    <input type="number" id="consultorio-numero" class="form-control" min="1" max="99" placeholder="Ex: 1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="consultorio-especialidade">Especialidade:</label>
+                                    <input type="text" id="consultorio-especialidade" class="form-control" placeholder="Ex: Cardiologia" maxlength="50">
+                                </div>
+                                <div class="form-group">
+                                    <label for="consultorio-andar">Andar/Localização:</label>
+                                    <input type="text" id="consultorio-andar" class="form-control" placeholder="Ex: 2º Andar - Ala A" maxlength="30">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="consultorio-status">Status:</label>
+                                    <select id="consultorio-status" class="form-control">
+                                        <option value="ativo">Ativo</option>
+                                        <option value="inativo">Inativo</option>
+                                        <option value="manutencao">Manutenção</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button id="add-consultorio" class="btn-success">➕ Adicionar Consultório</button>
+                        </div>
+                        <div class="config-list">
+                            <h4>Consultórios Cadastrados</h4>
+                            <div id="consultorios-list" class="items-list">
+                                <!-- Lista será preenchida dinamicamente -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Configuração de Tipos de Atendimento -->
+                <div id="config-tipos" class="tab-content">
+                    <div class="config-panel">
+                        <div class="config-form">
+                            <h3>Gerenciar Tipos de Atendimento</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="tipo-sigla">Sigla (2-3 letras):</label>
+                                    <input type="text" id="tipo-sigla" class="form-control" maxlength="3" placeholder="Ex: CM" style="text-transform: uppercase;">
+                                </div>
+                                <div class="form-group">
+                                    <label for="tipo-nome">Nome Completo:</label>
+                                    <input type="text" id="tipo-nome" class="form-control" placeholder="Ex: Consulta Médica" maxlength="50">
+                                </div>
+                                <div class="form-group">
+                                    <label for="tipo-cor">Cor:</label>
+                                    <input type="color" id="tipo-cor" class="form-control color-input" value="#2196F3">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="tipo-prioridade">Prioridade (1-10):</label>
+                                    <input type="number" id="tipo-prioridade" class="form-control" min="1" max="10" value="5" placeholder="5">
+                                </div>
+                                <div class="form-group">
+                                    <label for="tipo-status">Status:</label>
+                                    <select id="tipo-status" class="form-control">
+                                        <option value="ativo">Ativo</option>
+                                        <option value="inativo">Inativo</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button id="add-tipo" class="btn-success">➕ Adicionar Tipo</button>
+                        </div>
+                        <div class="config-list">
+                            <h4>Tipos de Atendimento Cadastrados</h4>
+                            <div id="tipos-list" class="items-list">
+                                <!-- Lista será preenchida dinamicamente -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Configuração de Profissionais -->
+                <div id="config-profissionais" class="tab-content">
+                    <div class="config-panel">
+                        <div class="config-form">
+                            <h3>Gerenciar Profissionais</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="profissional-nome">Nome Completo:</label>
+                                    <input type="text" id="profissional-nome" class="form-control" placeholder="Ex: Dr. João Silva" maxlength="60">
+                                </div>
+                                <div class="form-group">
+                                    <label for="profissional-especialidade">Especialidade:</label>
+                                    <input type="text" id="profissional-especialidade" class="form-control" placeholder="Ex: Cardiologia" maxlength="50">
+                                </div>
+                                <div class="form-group">
+                                    <label for="profissional-crm">CRM/Registro:</label>
+                                    <input type="text" id="profissional-crm" class="form-control" placeholder="Ex: CRM 12345" maxlength="20">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="profissional-consultorio">Consultório Principal:</label>
+                                    <select id="profissional-consultorio" class="form-control">
+                                        <option value="">Selecione um consultório</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="profissional-status">Status:</label>
+                                    <select id="profissional-status" class="form-control">
+                                        <option value="ativo">Ativo</option>
+                                        <option value="inativo">Inativo</option>
+                                        <option value="ferias">Férias</option>
+                                        <option value="licenca">Licença</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button id="add-profissional" class="btn-success">➕ Adicionar Profissional</button>
+                        </div>
+                        <div class="config-list">
+                            <h4>Profissionais Cadastrados</h4>
+                            <div id="profissionais-list" class="items-list">
+                                <!-- Lista será preenchida dinamicamente -->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -107,7 +272,10 @@
                     <h3>Fila de Espera</h3>
                     <div class="queue-stats">
                         <span class="queue-count" id="queue-count">4 pessoas na fila</span>
-                        <button id="refresh-queue" class="btn-refresh">🔄 Atualizar</button>
+                        <div class="queue-actions">
+                            <button id="refresh-queue" class="btn-refresh">🔄 Atualizar</button>
+                            <button id="clear-queue" class="btn-danger">🗑️ Limpar Fila</button>
+                        </div>
                     </div>
                 </div>
                 <div class="queue-container">
@@ -136,6 +304,46 @@
                     <div class="stat-card">
                         <div class="stat-number" id="stat-average">8m</div>
                         <div class="stat-label">Tempo Médio</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção de Limpeza e Manutenção -->
+            <div class="maintenance-section">
+                <h3>🧹 Limpeza e Manutenção</h3>
+                <div class="maintenance-panel">
+                    <div class="maintenance-actions">
+                        <div class="maintenance-item">
+                            <div class="maintenance-info">
+                                <h4>Limpar Fila de Espera</h4>
+                                <p>Remove todas as senhas aguardando atendimento</p>
+                            </div>
+                            <button id="clear-waiting-queue" class="btn-warning">🗑️ Limpar Fila</button>
+                        </div>
+                        
+                        <div class="maintenance-item">
+                            <div class="maintenance-info">
+                                <h4>Limpar Histórico de Chamadas</h4>
+                                <p>Remove o histórico de chamadas recentes</p>
+                            </div>
+                            <button id="clear-call-history" class="btn-warning">📜 Limpar Histórico</button>
+                        </div>
+                        
+                        <div class="maintenance-item">
+                            <div class="maintenance-info">
+                                <h4>Zerar Contadores</h4>
+                                <p>Reinicia todos os contadores de senhas</p>
+                            </div>
+                            <button id="reset-counters" class="btn-warning">🔄 Zerar Contadores</button>
+                        </div>
+                        
+                        <div class="maintenance-item">
+                            <div class="maintenance-info">
+                                <h4>Reiniciar Sistema</h4>
+                                <p>Limpa todos os dados e reinicia o sistema</p>
+                            </div>
+                            <button id="reset-system" class="btn-danger">⚠️ Reiniciar Sistema</button>
+                        </div>
                     </div>
                 </div>
             </div>

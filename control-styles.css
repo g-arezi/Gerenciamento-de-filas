@@ -520,3 +520,469 @@ select.form-control option {
         font-size: 14px;
     }
 }
+
+/* Estilos para Seção de Configurações */
+.config-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.config-section h2 {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Tabs */
+.config-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tab-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    border-color: #4CAF50;
+    color: white;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Config Panels */
+.config-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.config-form {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.config-form h3 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.config-list {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.config-list h4 {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Form Rows */
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Color Input */
+.color-input {
+    height: 45px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    cursor: pointer;
+}
+
+.color-input::-webkit-color-swatch {
+    border: none;
+    border-radius: 6px;
+}
+
+.color-input::-webkit-color-swatch-wrapper {
+    padding: 4px;
+    border-radius: 8px;
+}
+
+/* Items List */
+.items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.list-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.list-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-title {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.item-details {
+    color: #b0b0b0;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.item-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-edit, .btn-delete {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-edit {
+    background: rgba(33, 150, 243, 0.8);
+    color: white;
+}
+
+.btn-edit:hover {
+    background: rgba(33, 150, 243, 1);
+    transform: scale(1.05);
+}
+
+.btn-delete {
+    background: rgba(244, 67, 54, 0.8);
+    color: white;
+}
+
+.btn-delete:hover {
+    background: rgba(244, 67, 54, 1);
+    transform: scale(1.05);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-ativo {
+    background: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.status-inativo {
+    background: rgba(158, 158, 158, 0.2);
+    color: #9E9E9E;
+    border: 1px solid rgba(158, 158, 158, 0.3);
+}
+
+.status-manutencao {
+    background: rgba(255, 152, 0, 0.2);
+    color: #FF9800;
+    border: 1px solid rgba(255, 152, 0, 0.3);
+}
+
+.status-ferias {
+    background: rgba(33, 150, 243, 0.2);
+    color: #2196F3;
+    border: 1px solid rgba(33, 150, 243, 0.3);
+}
+
+.status-licenca {
+    background: rgba(156, 39, 176, 0.2);
+    color: #9C27B0;
+    border: 1px solid rgba(156, 39, 176, 0.3);
+}
+
+/* Tipo Color Badge */
+.tipo-color-badge {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    display: inline-block;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #b0b0b0;
+    font-style: italic;
+}
+
+.empty-state-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+/* Queue Actions */
+.queue-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #f44336, #d32f2f);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
+}
+
+.btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(244, 67, 54, 0.4);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #ff9800, #f57c00);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(255, 152, 0, 0.3);
+}
+
+.btn-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+}
+
+/* Maintenance Section */
+.maintenance-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.maintenance-section h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.maintenance-panel {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.maintenance-actions {
+    display: grid;
+    gap: 15px;
+}
+
+.maintenance-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.maintenance-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.maintenance-info h4 {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.maintenance-info p {
+    color: #b0b0b0;
+    font-size: 13px;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Responsive Config */
+@media (max-width: 1024px) {
+    .config-panel {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .config-tabs {
+        justify-content: center;
+    }
+    
+    .tab-btn {
+        flex: 1;
+        min-width: 120px;
+        justify-content: center;
+    }
+    
+    .maintenance-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .maintenance-item button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .config-tabs {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        gap: 8px;
+    }
+    
+    .tab-btn {
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+    
+    .config-form,
+    .config-list {
+        padding: 20px;
+    }
+    
+    .list-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .item-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 480px) {
+    .config-section {
+        padding: 20px;
+    }
+    
+    .config-tabs {
+        grid-template-columns: 1fr;
+    }
+}

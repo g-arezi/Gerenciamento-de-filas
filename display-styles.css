@@ -1,4 +1,4 @@
-/* Estilos para Tela de Exibição - Versão Ultra Moderna */
+/* Estilos para Tela de Exibição - Versão Profissional */
 * {
     margin: 0;
     padding: 0;
@@ -6,525 +6,251 @@
 }
 
 body {
-    font-family: 'Roboto', Arial, sans-serif;
-    background: linear-gradient(120deg, #0a0e1a 0%, #1a1d29 30%, #232946 60%, #0f3460 100%);
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    background: #f8f9fa;
     min-height: 100vh;
-    color: #e0e0e0;
+    color: #2c3e50;
     overflow: hidden;
     letter-spacing: 0.01em;
-    -webkit-font-smoothing: antialiased;
-    position: relative;
 }
 
-/* Partículas de fundo animadas */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 20% 80%, rgba(0, 255, 136, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(255, 107, 107, 0.02) 0%, transparent 50%);
-    animation: particle-float 20s ease-in-out infinite;
-    pointer-events: none;
-    z-index: -1;
-}
-
-@keyframes particle-float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    33% { transform: translateY(-10px) rotate(1deg); }
-    66% { transform: translateY(5px) rotate(-1deg); }
-}
-
-/* Container principal com efeito glass e sombra mais intensa */
+/* Container principal simples e limpo */
 .container {
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     position: relative;
-    background: rgba(15, 19, 32, 0.6);
-    box-shadow: 0 8px 40px 0 rgba(0,0,0,0.7);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #ffffff;
+    border: 1px solid #e0e6ed;
 }
 
-/* Header com glassmorphism mais evidente e gradiente animado */
+/* Header corporativo */
 .header {
-    background: linear-gradient(135deg, rgba(20,25,40,0.92) 0%, rgba(30,34,54,0.88) 60%, rgba(0,212,255,0.08) 100%);
-    backdrop-filter: blur(24px);
-    padding: 28px 56px;
+    background: #2c3e50;
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid rgba(0,212,255,0.12);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.05) inset;
-    border-radius: 0 0 40px 40px;
-    position: relative;
-    overflow: hidden;
-}
-
-.header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(0,212,255,0.5), transparent);
-    animation: scan-line 3s linear infinite;
-}
-
-@keyframes scan-line {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
+    border-bottom: 3px solid #3498db;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .hospital-info {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 15px;
 }
 
 .hospital-info h1 {
-    font-size: 2.4rem;
-    font-weight: 800;
-    color: #fff;
-    letter-spacing: 0.05em;
-    text-shadow: 0 2px 20px #00d4ff66, 0 1px 0 #000;
-    margin-left: 8px;
-    background: linear-gradient(135deg, #fff 0%, #00d4ff 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: text-glow 4s ease-in-out infinite;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 0.02em;
 }
 
-@keyframes text-glow {
-    0%, 100% { filter: drop-shadow(0 0 8px #00d4ff44); }
-    50% { filter: drop-shadow(0 0 16px #00d4ff88); }
-}
-
-/* Logo com efeito glass e sombra */
+/* Logo simples */
 .logo {
-    width: 64px;
-    height: 64px;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px #00d4ff44, 0 1px 0 rgba(255,255,255,0.1) inset;
-    background: rgba(255,255,255,0.06);
-    padding: 0;
-    transition: all 0.3s ease;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    background: #3498db;
+    padding: 8px;
 }
 
-.logo:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 24px #00d4ff66;
-}
-
-/* Data/hora com fonte digital e destaque */
+/* Data/hora profissional */
 .datetime {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 6px;
-    font-family: 'Roboto Mono', 'Roboto', Arial, sans-serif;
+    gap: 4px;
+    font-family: 'Arial', sans-serif;
     text-align: right;
-    padding: 12px 20px;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 16px;
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(0, 212, 255, 0.2);
+    padding: 10px 16px;
+    background: #34495e;
+    border-radius: 6px;
+    color: #ffffff;
 }
 
-/* Relógio com efeito neon */
+/* Relógio simples */
 .time {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #00d4ff;
-    text-shadow: 0 0 12px #00d4ff99, 0 1px 0 #000;
-    letter-spacing: 0.1em;
-    animation: time-pulse 2s ease-in-out infinite;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #3498db;
+    letter-spacing: 0.05em;
 }
 
-@keyframes time-pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.8; }
-}
-
-/* Data com opacidade e fonte menor */
+/* Data simples */
 .date {
-    font-size: 1.1rem;
-    opacity: 0.8;
-    color: #a0a0a0;
+    font-size: 0.9rem;
+    color: #bdc3c7;
     font-weight: 500;
 }
 
-/* Main content com espaçamento maior e cards centralizados */
+/* Main content limpo */
 .main-content {
     flex: 1;
     display: flex;
     flex-direction: row;
-    gap: 40px;
-    padding: 48px 64px 32px 64px;
+    gap: 30px;
+    padding: 30px 40px;
     justify-content: center;
     align-items: stretch;
+    background: #f8f9fa;
 }
 
-/* Painéis com espaçamento maior */
+/* Painéis organizados */
 .left-panel, .right-panel {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 25px;
     justify-content: center;
 }
 
-/* Card principal com glassmorphism, borda gradiente e glow */
+/* Card principal profissional */
 .current-password-section {
-    background: rgba(15, 20, 32, 0.8);
-    backdrop-filter: blur(32px);
-    border-radius: 32px;
-    padding: 48px 40px 40px 40px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 40px 30px;
     text-align: center;
-    border: 2px solid rgba(0, 255, 136, 0.3);
-    box-shadow: 
-        0 16px 64px 0 rgba(0, 255, 136, 0.15),
-        0 4px 20px 0 rgba(0, 0, 0, 0.3),
-        0 1px 0 rgba(255, 255, 255, 0.05) inset;
+    border: 2px solid #27ae60;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     position: relative;
-    overflow: hidden;
-    transition: all 0.4s ease;
-    animation: card-float 6s ease-in-out infinite;
 }
 
-@keyframes card-float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-4px); }
-}
-
-.current-password-section::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 32px;
-    pointer-events: none;
-    box-shadow: 0 0 80px 12px rgba(0, 255, 136, 0.08) inset;
-    opacity: 0.6;
-}
-
-.current-password-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 136, 0.05) 50%, transparent 70%);
-    animation: shimmer 3s linear infinite;
-    border-radius: 32px;
-}
-
-@keyframes shimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-}
-
-/* Senha atual com efeito glow ultra melhorado */
+/* Senha atual destaque profissional */
 .current-password {
-    font-size: 5rem;
-    font-weight: 900;
-    margin-top: 24px;
-    text-shadow: 
-        0 0 30px rgba(0, 255, 136, 0.8),
-        0 0 60px rgba(0, 255, 136, 0.4),
-        0 4px 12px rgba(0, 0, 0, 0.6);
-    animation: pulse-glow 3s ease-in-out infinite;
-    color: #00ff88;
-    letter-spacing: 0.1em;
-    transition: all 0.3s ease;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-top: 15px;
+    color: #27ae60;
+    letter-spacing: 0.05em;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    position: relative;
-    z-index: 2;
-}
-
-@keyframes pulse-glow {
-    0%, 100% { 
-        transform: scale(1);
-        filter: brightness(1);
-    }
-    50% { 
-        transform: scale(1.02);
-        filter: brightness(1.1);
-    }
+    gap: 15px;
 }
 
 .current-password svg {
-    width: 44px;
-    height: 44px;
-    filter: drop-shadow(0 0 12px rgba(0, 255, 136, 0.8));
-    animation: icon-spin 8s linear infinite;
+    width: 35px;
+    height: 35px;
+    fill: #27ae60;
 }
 
-@keyframes icon-spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Card guichê ultra melhorado */
+/* Card guichê profissional */
 .guiche-section {
-    background: rgba(15, 20, 32, 0.8);
-    backdrop-filter: blur(24px);
-    border-radius: 28px;
-    padding: 40px 32px 32px 32px;
-    text-align: center;
-    border: 2px solid rgba(0, 212, 255, 0.3);
-    box-shadow: 
-        0 12px 48px 0 rgba(0, 212, 255, 0.15),
-        0 4px 20px 0 rgba(0, 0, 0, 0.3),
-        0 1px 0 rgba(255, 255, 255, 0.05) inset;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s ease;
-    animation: card-float 6s ease-in-out infinite 1s;
-}
-
-.guiche-section::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 28px;
-    pointer-events: none;
-    box-shadow: 0 0 64px 10px rgba(0, 212, 255, 0.08) inset;
-    opacity: 0.5;
-}
-
-/* Número do guichê melhorado */
-.guiche-number {
-    font-size: 4.2rem;
-    font-weight: 900;
-    margin-top: 20px;
-    text-shadow: 
-        0 0 24px rgba(0, 212, 255, 0.8),
-        0 0 48px rgba(0, 212, 255, 0.4),
-        0 4px 12px rgba(0, 0, 0, 0.6);
-    color: #00d4ff;
-    letter-spacing: 0.08em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    animation: number-glow 4s ease-in-out infinite;
-}
-
-@keyframes number-glow {
-    0%, 100% { filter: brightness(1); }
-    50% { filter: brightness(1.2); }
-}
-
-.guiche-number svg {
-    width: 36px;
-    height: 36px;
-    filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.8));
-}
-
-/* Section Titles modernos com gradientes e ícones */
-.section-title {
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin-bottom: 16px;
-    padding: 16px 24px;
+    background: #ffffff;
     border-radius: 12px;
+    padding: 35px 25px;
     text-align: center;
+    border: 2px solid #3498db;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Número do guichê */
+.guiche-number {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-top: 12px;
+    color: #3498db;
+    letter-spacing: 0.05em;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.section-title::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-    transition: left 0.5s ease;
+.guiche-number svg {
+    width: 28px;
+    height: 28px;
+    fill: #3498db;
 }
 
-.section-title:hover::before {
-    left: 100%;
+/* Section Titles profissionais */
+.section-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #ffffff;
 }
 
 .section-title.senha {
-    background: linear-gradient(135deg, rgba(39, 174, 96, 0.9) 0%, rgba(46, 204, 113, 0.9) 100%);
-    box-shadow: 0 4px 16px rgba(39, 174, 96, 0.3);
+    background: #27ae60;
 }
 
 .section-title.guiche {
-    background: linear-gradient(135deg, rgba(52, 152, 219, 0.9) 0%, rgba(41, 128, 185, 0.9) 100%);
-    box-shadow: 0 4px 16px rgba(52, 152, 219, 0.3);
+    background: #3498db;
 }
 
 .section-title.recent {
-    background: linear-gradient(135deg, rgba(243, 156, 18, 0.9) 0%, rgba(230, 126, 34, 0.9) 100%);
-    box-shadow: 0 4px 16px rgba(243, 156, 18, 0.3);
+    background: #f39c12;
 }
 
 .section-title.next {
-    background: linear-gradient(135deg, rgba(155, 89, 182, 0.9) 0%, rgba(142, 68, 173, 0.9) 100%);
-    box-shadow: 0 4px 16px rgba(155, 89, 182, 0.3);
+    background: #9b59b6;
 }
 
 .section-title.patient {
-    background: linear-gradient(135deg, rgba(26, 188, 156, 0.9) 0%, rgba(22, 160, 133, 0.9) 100%);
-    box-shadow: 0 4px 16px rgba(26, 188, 156, 0.3);
+    background: #1abc9c;
 }
 
 .section-title.office {
-    background: linear-gradient(135deg, rgba(231, 76, 60, 0.9) 0%, rgba(192, 57, 43, 0.9) 100%);
-    box-shadow: 0 4px 16px rgba(231, 76, 60, 0.3);
+    background: #e74c3c;
 }
 
-/* Animations */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-@keyframes slideIn {
-    from { 
-        transform: translateX(-100%) scale(0.9);
-        opacity: 0;
-    }
-    to { 
-        transform: translateX(0) scale(1);
-        opacity: 1;
-    }
-}
-
-/* Scrollbar Styling */
-.recent-calls::-webkit-scrollbar,
-.next-calls::-webkit-scrollbar {
-    width: 10px;
-}
-
-.recent-calls::-webkit-scrollbar-track,
-.next-calls::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-}
-
-.recent-calls::-webkit-scrollbar-thumb,
-.next-calls::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%);
-    border-radius: 10px;
-    border: 2px solid rgba(0, 0, 0, 0.1);
-}
-
-.recent-calls::-webkit-scrollbar-thumb:hover,
-.next-calls::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.3) 100%);
-}
-
-/* Responsividade ultra melhorada para todos os dispositivos */
+/* Responsividade profissional */
 @media (max-width: 1400px) {
     .main-content {
-        gap: 32px;
-        padding: 40px 48px 24px 48px;
+        gap: 25px;
+        padding: 25px 35px;
     }
     
     .current-password {
-        font-size: 4.2rem;
-    }
-    
-    .guiche-number {
-        font-size: 3.6rem;
-    }
-}
-
-@media (max-width: 1200px) {
-    .main-content {
-        gap: 28px;
-        padding: 32px 24px 20px 24px;
-    }
-    
-    .current-password {
-        font-size: 3.8rem;
-    }
-    
-    .guiche-number {
-        font-size: 3.2rem;
-    }
-    
-    .hospital-info h1 {
-        font-size: 2rem;
-    }
-    
-    .header {
-        padding: 24px 32px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .main-content {
-        flex-direction: column;
-        gap: 24px;
-        padding: 20px 16px 16px 16px;
-    }
-    
-    .left-panel, .right-panel {
-        gap: 20px;
-    }
-    
-    .current-password {
-        font-size: 3.4rem;
+        font-size: 3.5rem;
     }
     
     .guiche-number {
         font-size: 2.8rem;
     }
-    
-    .patient-name {
-        font-size: 1.8rem;
-    }
-    
-    .office-info {
-        font-size: 1.4rem;
-    }
 }
 
-@media (max-width: 768px) {
-    .header {
-        padding: 16px 20px;
-        border-radius: 0 0 24px 24px;
+@media (max-width: 1200px) {
+    .main-content {
+        gap: 20px;
+        padding: 20px 25px;
+    }
+    
+    .current-password {
+        font-size: 3rem;
+    }
+    
+    .guiche-number {
+        font-size: 2.5rem;
     }
     
     .hospital-info h1 {
         font-size: 1.6rem;
     }
     
-    .logo {
-        width: 48px;
-        height: 48px;
+    .header {
+        padding: 18px 30px;
     }
-    
+}
+
+@media (max-width: 1024px) {
     .main-content {
-        padding: 16px 12px 12px 12px;
-        gap: 16px;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 15px;
     }
     
     .current-password {
@@ -532,219 +258,180 @@ body::before {
     }
     
     .guiche-number {
-        font-size: 2.4rem;
-    }
-    
-    .patient-name {
-        font-size: 1.5rem;
-    }
-    
-    .office-info {
-        font-size: 1.2rem;
-    }
-    
-    .call-item, .next-call-item {
-        padding: 14px 16px;
-        font-size: 13px;
-        gap: 12px;
-    }
-    
-    .control-btn {
-        padding: 12px 20px;
-        font-size: 13px;
-    }
-    
-    .control-link {
-        bottom: 20px;
-        right: 20px;
+        font-size: 2.3rem;
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .header {
-        padding: 12px 16px;
+        padding: 15px 20px;
     }
     
     .hospital-info h1 {
-        font-size: 1.3rem;
-    }
-    
-    .datetime {
-        padding: 8px 12px;
-    }
-    
-    .time {
         font-size: 1.4rem;
     }
     
-    .date {
-        font-size: 0.9rem;
+    .logo {
+        width: 40px;
+        height: 40px;
     }
     
-    .current-password {
-        font-size: 2.4rem;
-    }
-    
-    .guiche-number {
-        font-size: 2rem;
-    }
-    
-    .patient-name {
-        font-size: 1.3rem;
-    }
-    
-    .office-info {
-        font-size: 1.1rem;
-    }
-    
-    .call-item, .next-call-item {
-        padding: 12px 14px;
-        font-size: 12px;
-        gap: 10px;
-        grid-template-columns: 1fr 1.5fr auto;
-    }
-    
-    .section-title {
-        font-size: 0.9rem;
-        padding: 12px 16px;
-    }
-    
-    .current-password-section,
-    .guiche-section,
-    .patient-section,
-    .office-section {
-        padding: 24px 20px 20px 20px;
-    }
-    
-    .recent-calls-section,
-    .next-calls-section {
-        padding: 20px 16px 16px 16px;
-    }
-}
-
-@media (max-width: 480px) {
     .main-content {
-        padding: 12px 8px 8px 8px;
+        padding: 15px 10px;
     }
     
     .current-password {
-        font-size: 2rem;
-        gap: 12px;
+        font-size: 2.2rem;
     }
     
     .guiche-number {
         font-size: 1.8rem;
+    }
+    
+    .current-password-section,
+    .guiche-section {
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .current-password {
+        font-size: 1.8rem;
+        gap: 10px;
+    }
+    
+    .guiche-number {
+        font-size: 1.5rem;
         gap: 8px;
-    }
-    
-    .patient-name {
-        font-size: 1.1rem;
-    }
-    
-    .office-info {
-        font-size: 1rem;
-    }
-    
-    .call-item, .next-call-item {
-        padding: 10px 12px;
-        font-size: 11px;
-        gap: 8px;
-        grid-template-columns: 1fr 1fr auto;
     }
     
     .current-password svg {
-        width: 28px;
-        height: 28px;
+        width: 20px;
+        height: 20px;
     }
     
     .guiche-number svg {
-        width: 24px;
-        height: 24px;
-    }
-    
-    .section-title svg {
-        width: 16px;
-        height: 16px;
-    }
-    
-    .control-btn {
-        padding: 10px 16px;
-        font-size: 12px;
-        gap: 8px;
+        width: 18px;
+        height: 18px;
     }
 }
 
-/* Animações especiais para dispositivos com motion */
-@media (prefers-reduced-motion: no-preference) {
-    .current-password-section,
-    .guiche-section,
-    .patient-section,
-    .office-section,
-    .recent-calls-section,
-    .next-calls-section {
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .current-password-section:hover,
-    .guiche-section:hover,
-    .patient-section:hover,
-    .office-section:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 20px 80px rgba(0, 255, 136, 0.2);
-    }
-    
-    .guiche-section:hover {
-        box-shadow: 0 20px 80px rgba(0, 212, 255, 0.2);
-    }
-    
-    .patient-section:hover {
-        box-shadow: 0 20px 80px rgba(26, 188, 156, 0.2);
-    }
-    
-    .office-section:hover {
-        box-shadow: 0 20px 80px rgba(231, 76, 60, 0.2);
-    }
+/* Estilos para seções adicionais se existirem */
+.patient-section,
+.office-section,
+.recent-calls-section,
+.next-calls-section {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px 25px;
+    border: 1px solid #e0e6ed;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Modo de alto contraste */
-@media (prefers-contrast: high) {
-    .current-password-section {
-        border-color: #00ff88;
-        background: rgba(0, 0, 0, 0.9);
-    }
-    
-    .guiche-section {
-        border-color: #00d4ff;
-        background: rgba(0, 0, 0, 0.9);
-    }
-    
-    .patient-section {
-        border-color: #1abc9c;
-        background: rgba(0, 0, 0, 0.9);
-    }
-    
-    .office-section {
-        border-color: #e74c3c;
-        background: rgba(0, 0, 0, 0.9);
-    }
-    
-    .call-item, .next-call-item {
-        background: rgba(0, 0, 0, 0.8);
-        border-color: rgba(255, 255, 255, 0.3);
-    }
+.patient-name {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1abc9c;
+    text-align: center;
+    margin-top: 10px;
 }
 
-/* Suporte a temas escuros do sistema */
-@media (prefers-color-scheme: dark) {
-    body {
-        background: linear-gradient(120deg, #050812 0%, #0a0e1a 30%, #1a1d29 60%, #232946 100%);
-    }
-    
-    .container {
-        background: rgba(5, 8, 18, 0.8);
-    }
-    
-    .header {
-        background: linear-gradient(135deg, rgba(10, 14, 26, 0.95) 0%, rgba(20, 25, 40, 0.92) 60%, rgba(0,212,255,0.08) 100%);
-    }
+.office-info {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #e74c3c;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Lista de chamadas profissional */
+.recent-calls,
+.next-calls {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.call-item,
+.next-call-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 15px;
+    padding: 12px 15px;
+    background: #f8f9fa;
+    border: 1px solid #e0e6ed;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    align-items: center;
+}
+
+.call-item:last-child,
+.next-call-item:last-child {
+    margin-bottom: 0;
+}
+
+.call-password {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.call-name {
+    color: #34495e;
+}
+
+.call-time {
+    font-size: 12px;
+    color: #7f8c8d;
+}
+
+/* Controles simples */
+.control-panel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.control-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+    transition: background-color 0.2s ease;
+}
+
+.control-btn:hover {
+    background: #2980b9;
+}
+
+/* Scrollbar simples */
+.recent-calls::-webkit-scrollbar,
+.next-calls::-webkit-scrollbar {
+    width: 8px;
+}
+
+.recent-calls::-webkit-scrollbar-track,
+.next-calls::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.recent-calls::-webkit-scrollbar-thumb,
+.next-calls::-webkit-scrollbar-thumb {
+    background: #bdc3c7;
+    border-radius: 4px;
+}
+
+.recent-calls::-webkit-scrollbar-thumb:hover,
+.next-calls::-webkit-scrollbar-thumb:hover {
+    background: #95a5a6;
 }
